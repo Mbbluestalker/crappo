@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const RightColumn = () => {
     const [name, setName] = useState("");
+    const [isRendered, setIsRendered] = useState(false);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -13,7 +14,8 @@ const RightColumn = () => {
     }
 
     const handleSubmit = (e) => {
-        
+        e.preventDefault();
+        setIsRendered(true);
     }
 
   return (
@@ -28,7 +30,7 @@ const RightColumn = () => {
         </div>
 
         <input onClick={handleSubmit} className="btn" type="submit"  />
-        
+        {isRendered ? <h1>Hello {name}</h1> : null}
       </form>
     </div>
   );
