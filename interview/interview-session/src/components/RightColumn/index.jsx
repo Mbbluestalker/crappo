@@ -1,18 +1,26 @@
-import React from "react";
 import './style.css';
+import { useState } from "react";
 
 const RightColumn = () => {
-    const handleSubmit = (e) => {
+    const [name, setName] = useState("");
+
+    const handleChange = (e) => {
         e.preventDefault();
+        setName(e.target.value);
         
-        console.log('submit');
+
+        console.log(name);
+    }
+
+    const handleSubmit = (e) => {
+        
     }
 
   return (
     <div>
       <form>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" placeholder="Enter your name" />
+        <input onChange={handleChange} type="text" name="name" id='name' placeholder="Enter your name" value={name} />
 
         <div>
           <label htmlFor="agree">I Agree</label>
@@ -20,7 +28,7 @@ const RightColumn = () => {
         </div>
 
         <input onClick={handleSubmit} className="btn" type="submit"  />
-
+        
       </form>
     </div>
   );
