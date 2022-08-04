@@ -30,7 +30,7 @@ const RightColumn = () => {
         </div>
 
         <input onClick={handleSubmit} className="btn" type="submit"  />
-        {isRendered ? <h1>Hello {name}</h1> : null}
+        {isRendered ? <h1>Thank you, {name}</h1> : null}
       </form>
     </div>
   );
